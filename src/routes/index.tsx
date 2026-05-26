@@ -1,26 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Products } from "@/components/site/Products";
+import { Capabilities } from "@/components/site/Capabilities";
+import { WhyUs } from "@/components/site/WhyUs";
+import { Contact } from "@/components/site/Contact";
+import { Toaster } from "@/components/ui/sonner";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Shah & Shah — Precision Metal Fabrication & Engineering" },
+      {
+        name: "description",
+        content:
+          "Premium metal fabrication and engineering — pressure vessels, heat exchangers, storage tanks, structural and custom manufacturing for industries nationwide.",
+      },
+      { property: "og:title", content: "Shah & Shah — Precision Metal Fabrication" },
+      {
+        property: "og:description",
+        content:
+          "High-quality fabrication solutions engineered with precision, safety and uncompromising quality.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main className="relative bg-background text-foreground antialiased">
+      <Nav />
+      <Hero />
+      <About />
+      <Products />
+      <Capabilities />
+      <WhyUs />
+      <Contact />
+      <Toaster />
+    </main>
+  );
 }
