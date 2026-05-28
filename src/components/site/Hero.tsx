@@ -26,15 +26,6 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-40 pb-24 min-h-screen flex flex-col justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground mb-8"
-        >
-          <span className="h-px w-10 bg-gold" />
-          Engineering Excellence · Est. Nationwide
-        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
