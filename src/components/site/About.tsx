@@ -23,11 +23,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Engineering Excellence" },
-  { value: 500, suffix: "+", label: "Industrial Solutions Delivered" },
+  { value: 20, suffix: "+", label: "Years in the Mill Scale & Metal Industry" },
   { value: 100, suffix: "%", label: "Quality Manufacturing Standard" },
-  { value: 28, suffix: "", label: "States — Nationwide Service" },
 ];
+
 
 export function About() {
   return (
