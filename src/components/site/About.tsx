@@ -23,11 +23,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Engineering Excellence" },
-  { value: 500, suffix: "+", label: "Industrial Solutions Delivered" },
+  { value: 20, suffix: "+", label: "Years in the Mill Scale & Metal Industry" },
   { value: 100, suffix: "%", label: "Quality Manufacturing Standard" },
-  { value: 28, suffix: "", label: "States — Nationwide Service" },
 ];
+
 
 export function About() {
   return (
@@ -89,16 +88,18 @@ export function About() {
               className="mt-8 space-y-5 text-muted-foreground leading-relaxed"
             >
               <p>
-                At Shah & Shah, we specialize in delivering high-quality
-                fabrication and engineering solutions for industrial
-                applications — from metal bending and rolling to surface
-                treatment, custom manufacturing, and structural fabrication.
+                Shah & Shah is a new-generation fabrication and engineering
+                venture, built on a 20+ year legacy in the mill scale and
+                metal scrap industry — an inheritance of material expertise,
+                trusted relationships, and a deep understanding of steel.
               </p>
               <p>
-                We are committed to innovation, safety, precision, and customer
-                satisfaction, delivering reliable solutions for multiple
-                industries nationwide.
+                Today, we channel that foundation into precision metal
+                fabrication — delivering bending, rolling, surface treatment,
+                structural and custom manufacturing with uncompromising
+                quality and modern engineering discipline.
               </p>
+
             </motion.div>
 
             <div className="mt-14 grid grid-cols-2 gap-px bg-border rounded-2xl overflow-hidden">
