@@ -3,7 +3,7 @@ import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
 import { Products } from "@/components/site/Products";
-import { Capabilities } from "@/components/site/Capabilities";
+import { Gallery } from "@/components/site/Gallery";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Contact } from "@/components/site/Contact";
 import { Toaster } from "@/components/ui/sonner";
@@ -35,7 +35,7 @@ function Index() {
       <Hero />
       <About />
       <Products />
-      <Capabilities />
+      <Gallery />
       <WhyUs />
       <Contact />
       <Toaster />
