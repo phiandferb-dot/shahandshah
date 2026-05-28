@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 
-// Placeholder gallery — replace `photos` with real project images once provided.
-const photos: { src: string; alt: string; caption?: string }[] = [
-  // { src: "/gallery/01.jpg", alt: "Project 01", caption: "Pressure vessel — site install" },
+const photos: { src: string; alt: string }[] = [
+  { src: "/189A326D-0213-46C5-B7C4-95C40B6B72F0_1_201_a.jpeg", alt: "Metal fabrication detail" },
+  { src: "/4036802F-F3D8-438C-8417-C5EA9E0500F5_1_201_a.jpeg", alt: "Storage tank in workshop" },
+  { src: "/808A887F-AF95-4D82-ADA6-A4A4A623C023.png", alt: "Workers in manufacturing facility" },
+  { src: "/8D11470E-45C1-4F8F-91DF-05C54A2F54F7.png", alt: "Welding in progress" },
 ];
 
 export function Gallery() {
@@ -18,63 +20,42 @@ export function Gallery() {
             className="flex items-center gap-3 mb-6 text-xs tracking-[0.3em] text-primary uppercase"
           >
             <span className="h-px w-10 bg-primary/60" />
-            Selected Work
+            Archival
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.7 }}
-            className="font-display text-4xl md:text-6xl leading-[1.05] tracking-tight"
+            className="font-display text-4xl md:text-5xl leading-[1.1] tracking-tight"
           >
-            From workshop floor
+            <span className="italic text-primary">Built to spec.</span>
             <br />
-            <span className="italic text-primary/90">to finished asset.</span>
+            Built to last.
           </motion.h2>
-          <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl">
-            A visual record of fabrication in progress — material, weld, and form.
-          </p>
         </div>
 
-        {photos.length === 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[4/5] rounded-sm border border-border/40 bg-muted/20 flex items-center justify-center text-xs text-muted-foreground/50 tracking-widest uppercase"
-              >
-                Photo {String(i + 1).padStart(2, "0")}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          {photos.map((p, i) => (
+            <motion.figure
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: (i % 4) * 0.08 }}
+              className="group relative overflow-hidden rounded-sm bg-muted/20"
+            >
+              <div className="aspect-square overflow-hidden">
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04] brightness-75 group-hover:brightness-90"
+                />
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {photos.map((p, i) => (
-              <motion.figure
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-                className="group relative overflow-hidden rounded-sm bg-muted/20"
-              >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img
-                    src={p.src}
-                    alt={p.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
-                  />
-                </div>
-                {p.caption && (
-                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-xs tracking-widest uppercase text-white/90 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {p.caption}
-                  </figcaption>
-                )}
-              </motion.figure>
-            ))}
-          </div>
-        )}
+            </motion.figure>
+          ))}
+        </div>
       </div>
     </section>
   );
