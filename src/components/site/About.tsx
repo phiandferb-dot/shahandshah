@@ -23,7 +23,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 20, suffix: "+", label: "Years in the Mill Scale & Metal Industry" },
+  { value: 20, suffix: "+", label: "Years in the Metal Industry" },
   { value: 100, suffix: "%", label: "Quality Manufacturing Standard" },
 ];
 
@@ -89,9 +89,9 @@ export function About() {
             >
               <p>
                 Shah & Shah is a new-generation fabrication and engineering
-                venture, built on a 20+ year legacy in the mill scale and
-                metal scrap industry — an inheritance of material expertise,
-                trusted relationships, and a deep understanding of steel.
+                venture, built on a 20+ year legacy in the metal industry — an
+                inheritance of material expertise, trusted relationships, and a
+                deep understanding of steel.
               </p>
               <p>
                 Today, we channel that foundation into precision metal
